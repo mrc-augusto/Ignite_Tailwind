@@ -1,6 +1,7 @@
 import { SettingTabs } from '@/components/SettingsTabs'
 import { InputControl, InputPrefix, InputRoot } from '@/components/Input'
-import { Mail, UploadCloud, User } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import * as FileInput from '@/components/Form/FileInput'
 
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
         </div>
 
         <form id='settings' className='mt-6 flex flex-col gap-5 divide-y divide-zinc-200'>
-         
+          
           <div className='grid grid-cols-form gap-3'>
             <label htmlFor="firstName" className='text-sm font-medium text-zinc-700'>Name</label>
             <div className='grid gap-6 grid-cols-2'>
@@ -44,28 +45,18 @@ export default function Home() {
                 <InputControl id='Email' type='email' defaultValue='mrc_augusto@hotmail.com'/>
               </InputRoot>
           </div>
-         
+
           <div className='grid grid-cols-form gap-3 pt-5'>
             <label htmlFor="photo" className='text-sm font-medium text-zinc-700'>
               Your Photo
               <span className='mt-0.5 text-sm font-normal text-zinc-500 block'>This will be displayed on your profile</span>
             </label>
-            <div className='flex items-start gap-5'>
-              <div className='bg-violet-50 flex h-16 w-16 items-center justify-center rounded-full'>
-                <User className='w-8 h-8 text-violet-500'/>
-              </div>
-              <label htmlFor="photo" className='group flex-1 cursor-pointer flex flex-col items-center gap-3 rounde-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:bg-violet-25 hover:to-violet-500'>
-                <div className='rounded-full border-6 border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100'>
-                  <UploadCloud className='h-5 w-5 text-zinc-600 group-hover:to-violet-700'/>
-                </div>
-                <div className='flex flex-col items-center gap-1'>
-                  <span className='text-sm'>
-                    <span className='font-semibold text-violet-700'>Click here to upload</span> or drag and drop
-                  </span>
-                  <span className='text-xs'>SVG, PNG, JPG or GIF(max. 800*400px)</span>
-                </div>
-              </label>
-              <input type="file" id='photo' className='sr-only' />
+            <div >
+              <FileInput.Root className='flex items-start gap-5'>
+                <FileInput.ImagePreview/>
+                <FileInput.Trigger/>
+                <FileInput.Control/>
+              </FileInput.Root>
             </div>  
           </div>
 
@@ -109,7 +100,13 @@ export default function Home() {
                 Share a few snippets of your work
               </span>
             </label>
-            <div></div>  
+            <div>
+              <FileInput.Root>
+                <FileInput.Trigger/>
+                <FileInput.FileList/>
+                <FileInput.Control multiple/>
+              </FileInput.Root>
+            </div>  
           </div>
           
           <div className='flex items-center gap-2 justify-end pt-5'>
