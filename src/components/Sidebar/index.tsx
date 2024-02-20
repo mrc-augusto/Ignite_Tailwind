@@ -7,7 +7,7 @@ import { InputControl, InputPrefix, InputRoot } from "../Input";
 
 export function Sidebar(){
   return(
-    <aside className='flex flex-col gap-6 border-r border-zinc-200 px-5 py-8 '>
+    <aside className='flex flex-col gap-6 border-r border-zinc-200 px-5 py-8 fixed left-0 top-0 right-0 z-20 bg-white'>
       <Logo/>
       
       <InputRoot>

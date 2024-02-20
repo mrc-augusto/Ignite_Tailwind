@@ -5,6 +5,7 @@ import * as FileInput from '@/components/Form/FileInput'
 import { Select } from '@/components/Form/Select'
 import { SelectItem } from '@/components/Form/Select/SelectItem'
 import { Textarea } from '@/components/Form/Textarea'
+import { Button } from '@/components/Button'
 
 
 export default function Home() {
@@ -20,8 +21,8 @@ export default function Home() {
             <span className='text-sm text-zinc-500'>Update your photo and pesonal details here</span>
           </div>
           <div className='flex items-center gap-2'>
-            <button type='button' className='rounded-lg px-4 py-2 text-sm font-semibold shadow-sm border border-zinc-300 text-zinc-700 hover:bg-zinc-50'>Cancel</button>
-            <button type='submit' form='settings' className='rounded-lg px-4 py-2 text-sm font-semibold shadow-sm bg-violet-600 text-white hover:bg-violet-700'>Save</button>
+            <Button variant='outline'  type='button'>Cancel</Button>
+            <Button variant='primary' type='submit' form='settings'>Save</Button>
           </div>
         </div>
 
@@ -97,7 +98,7 @@ export default function Home() {
             <label htmlFor="bio" className='text-sm font-medium text-zinc-700'>
               Bio
               <span className='mt-0.5 text-sm font-normal text-zinc-500 block'>
-                Write a shor introduction
+                Write a short introduction
               </span>
             </label>
             <div className='space-y-3'>
@@ -107,21 +108,21 @@ export default function Home() {
                   <SelectItem value='md' text='markdown'/>
                 </Select>
                 <div className='flex items-center gap-1'>
-                  <button type="button" className="rounded-md p-2 hover:bg-zinc-50">
+                  <Button type="button" variant='ghost'>
                     <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3}/>
-                  </button>
-                  <button type="button" className="rounded-md p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant='ghost'>
                     <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3}/>
-                  </button>
-                  <button type="button" className="rounded-md p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant='ghost'>
                     <Link className="h-4 w-4 text-zinc-500" strokeWidth={3}/>
-                  </button>
-                  <button type="button" className="rounded-md p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant='ghost'>
                     <List className="h-4 w-4 text-zinc-500" strokeWidth={3}/>
-                  </button>
-                  <button type="button" className="rounded-md p-2 hover:bg-zinc-50">
+                  </Button>
+                  <Button type="button" variant='ghost'>
                     <ListOrdered className="h-4 w-4 text-zinc-500" strokeWidth={3}/>
-                  </button>
+                  </Button>
                 </div>
               </div>
              <Textarea id='bio' defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialize in UX/Ui design, brand strategy, and Webflow development."/>
@@ -145,12 +146,8 @@ export default function Home() {
           </div>
           
           <div className='flex items-center gap-2 justify-end pt-5'>
-            <button type='button' className='rounded-lg px-4 py-2 text-sm font-semibold shadow-sm border border-zinc-300 text-zinc-700 hover:bg-zinc-50'>
-              Cancel
-            </button>
-            <button type='submit' className='rounded-lg px-4 py-2 text-sm font-semibold shadow-sm bg-violet-600 text-white hover:bg-violet-700'>
-              Save
-            </button>
+            <Button variant='outline'  type='button'>Cancel</Button>
+            <Button variant='primary' type='submit' form='settings'>Save</Button>
           </div>
         </form>
       </div>
